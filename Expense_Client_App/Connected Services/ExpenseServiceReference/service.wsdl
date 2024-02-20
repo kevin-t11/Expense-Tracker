@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="ExpenseService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ExpenseTracker_WCF" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IExpenseService_GetExpenses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpenses" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseService_GetExpenses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpensesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseService_AddExpense_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddExpense" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseService_AddExpense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddExpenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseService_UpdateExpense_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExpense" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseService_UpdateExpense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExpenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseService_DeleteExpense_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteExpense" />
+  </wsdl:message>
+  <wsdl:message name="IExpenseService_DeleteExpense_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteExpenseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IExpenseService">
+    <wsdl:operation name="GetExpenses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseService/GetExpenses" message="tns:IExpenseService_GetExpenses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseService/GetExpensesResponse" message="tns:IExpenseService_GetExpenses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddExpense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseService/AddExpense" message="tns:IExpenseService_AddExpense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseService/AddExpenseResponse" message="tns:IExpenseService_AddExpense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExpense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseService/UpdateExpense" message="tns:IExpenseService_UpdateExpense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseService/UpdateExpenseResponse" message="tns:IExpenseService_UpdateExpense_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteExpense">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExpenseService/DeleteExpense" message="tns:IExpenseService_DeleteExpense_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExpenseService/DeleteExpenseResponse" message="tns:IExpenseService_DeleteExpense_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IExpenseService" type="tns:IExpenseService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetExpenses">
+      <soap:operation soapAction="http://tempuri.org/IExpenseService/GetExpenses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddExpense">
+      <soap:operation soapAction="http://tempuri.org/IExpenseService/AddExpense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExpense">
+      <soap:operation soapAction="http://tempuri.org/IExpenseService/UpdateExpense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteExpense">
+      <soap:operation soapAction="http://tempuri.org/IExpenseService/DeleteExpense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExpenseService">
+    <wsdl:port name="BasicHttpBinding_IExpenseService" binding="tns:BasicHttpBinding_IExpenseService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
