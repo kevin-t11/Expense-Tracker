@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-
-// Expense.cs (Expense Model)
 
 namespace ExpenseTracker_WCF
 {
@@ -13,20 +7,18 @@ namespace ExpenseTracker_WCF
     public class Expense
     {
         [DataMember]
-        public int ExpenseId { get; set; }
+        public int Id { get; set; }
+
+        [DataMember]
+        public string Title { get; set; }
+
+        [DataMember]
+        public decimal Amount { get; set; }
 
         [DataMember]
         public string Description { get; set; }
 
         [DataMember]
-        public decimal Amount { get; set; }
-
-        // Add other properties as needed
-
-        public override string ToString()
-        {
-            return $"ExpenseId: {ExpenseId}, Description: {Description}, Amount: {Amount}";
-        }
+        public DateTime Date { get; set; }
     }
-
 }
